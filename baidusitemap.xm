@@ -4,7 +4,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/12/01/hexo-build-blog/</loc>
+    <loc>http://www.huangying47.top/2017/12/01/hexo-build-blog/</loc>
     <lastmod>2017-12-02T10:58:59.000Z</lastmod>
     <data>
         <display>
@@ -22,7 +22,7 @@
     
     
   <url>
-    <loc>http://yoursite.com/2017/12/02/jvm/</loc>
+    <loc>http://www.huangying47.top/2017/12/02/jvm/</loc>
     <lastmod>2017-12-02T07:39:40.000Z</lastmod>
     <data>
         <display>
@@ -37,7 +37,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/12/02/java8/</loc>
+    <loc>http://www.huangying47.top/2017/12/02/java8/</loc>
     <lastmod>2017-12-02T07:39:05.000Z</lastmod>
     <data>
         <display>
@@ -52,7 +52,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/12/02/thread/</loc>
+    <loc>http://www.huangying47.top/2017/12/02/thread/</loc>
     <lastmod>2017-12-02T07:38:58.000Z</lastmod>
     <data>
         <display>
@@ -67,7 +67,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/12/01/music/</loc>
+    <loc>http://www.huangying47.top/2017/12/01/music/</loc>
     <lastmod>2017-12-02T06:09:29.000Z</lastmod>
     <data>
         <display>
@@ -82,7 +82,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/12/01/picture/</loc>
+    <loc>http://www.huangying47.top/2017/12/01/picture/</loc>
     <lastmod>2017-12-02T06:09:15.000Z</lastmod>
     <data>
         <display>
@@ -99,7 +99,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/12/01/test/</loc>
+    <loc>http://www.huangying47.top/2017/12/01/test/</loc>
     <lastmod>2017-12-02T06:09:04.000Z</lastmod>
     <data>
         <display>
@@ -113,7 +113,7 @@
          
            
              
-              <breadCrumb title="杂记" url="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
+              <breadCrumb title="杂记" url="http://www.huangying47.top/categories/%E6%9D%82%E8%AE%B0/"/>
           
         </display>
     </data>
@@ -121,7 +121,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/12/02/%E9%9D%A2%E8%AF%95/</loc>
+    <loc>http://www.huangying47.top/2017/12/02/%E9%9D%A2%E8%AF%95/</loc>
     <lastmod>2017-12-02T03:30:59.000Z</lastmod>
     <data>
         <display>
@@ -133,7 +133,7 @@
          
            
              
-              <breadCrumb title="杂记" url="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
+              <breadCrumb title="杂记" url="http://www.huangying47.top/categories/%E6%9D%82%E8%AE%B0/"/>
           
         </display>
     </data>
@@ -141,7 +141,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/11/02/hello-world/</loc>
+    <loc>http://www.huangying47.top/2017/11/02/hello-world/</loc>
     <lastmod>2017-12-02T03:07:51.000Z</lastmod>
     <data>
         <display>
@@ -153,7 +153,7 @@
          
            
              
-              <breadCrumb title="笔记" url="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+              <breadCrumb title="笔记" url="http://www.huangying47.top/categories/%E7%AC%94%E8%AE%B0/"/>
           
         </display>
     </data>
