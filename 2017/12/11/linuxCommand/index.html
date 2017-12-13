@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.huangying47.top">
-  <title>linuxCommand | 黄英的博客</title>
+  <title>linux命令 | 黄英的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="linuxCommand">
+  <meta name="description" content="前言简单记录了一些基础常见的linux命令  linux命令手册">
+<meta name="keywords" content="linux命令">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux命令">
 <meta property="og:url" content="http://www.huangying47.top/2017/12/11/linuxCommand/index.html">
 <meta property="og:site_name" content="黄英的博客">
-<meta property="og:updated_time" content="2017-12-11T08:27:33.000Z">
+<meta property="og:description" content="前言简单记录了一些基础常见的linux命令  linux命令手册">
+<meta property="og:image" content="http://www.huangying47.top/2017/12/11/linuxCommand/19231557881875188.jpg">
+<meta property="og:image" content="http://www.huangying47.top/2017/12/11/linuxCommand/D3D01EF7-46DC-4D6B-8959-0E30F2DAECC0.png">
+<meta property="og:updated_time" content="2017-12-13T08:08:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linuxCommand">
+<meta name="twitter:title" content="linux命令">
+<meta name="twitter:description" content="前言简单记录了一些基础常见的linux命令  linux命令手册">
+<meta name="twitter:image" content="http://www.huangying47.top/2017/12/11/linuxCommand/19231557881875188.jpg">
   
     <link rel="alternative" href="/atom.xml" title="黄英的博客" type="application/atom+xml">
   
@@ -161,7 +168,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      linuxCommand
+      linux命令
     </h1>
   
 
@@ -174,7 +181,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>简单记录了一些基础常见的linux命令</p>
+<p><img src="/2017/12/11/linuxCommand/19231557881875188.jpg" alt="19231557881875188"></p>
+<p><a href="http://man.linuxde.net" target="_blank" rel="noopener">linux命令手册</a></p>
+<a id="more"></a>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ls</span>　　        显示文件或目录  </span><br><span class="line">    -<span class="keyword">l</span>           列出文件详细信息<span class="keyword">l</span>(<span class="keyword">list</span>)</span><br><span class="line">    -<span class="keyword">a</span>          列出当前目录下所有文件及目录，包括隐藏的<span class="keyword">a</span>(<span class="keyword">all</span>)  </span><br><span class="line"><span class="built_in">mkdir</span>         创建目录</span><br><span class="line">    -<span class="keyword">p</span>           创建目录，若无父目录，则创建<span class="keyword">p</span>(parent)</span><br><span class="line"><span class="keyword">cd</span>               切换目录</span><br><span class="line">touch          创建空文件</span><br><span class="line"><span class="keyword">echo</span>            创建带有内容的文件。</span><br><span class="line"><span class="keyword">cat</span>              查看文件内容</span><br><span class="line"><span class="keyword">cp</span>                拷贝</span><br><span class="line">mv               移动或重命名</span><br><span class="line">rm               删除文件</span><br><span class="line">    -r            递归删除，可删除子目录及文件</span><br><span class="line">    -<span class="keyword">f</span>            强制删除</span><br><span class="line"><span class="keyword">find</span>              在文件系统中搜索某文件</span><br><span class="line">wc                统计文本中行数、字数、字符数</span><br><span class="line"><span class="keyword">grep</span>             在文本文件中查找某个字符串</span><br><span class="line">rmdir           删除空目录</span><br><span class="line">tree             树形结构显示目录，需要安装tree包</span><br><span class="line"><span class="keyword">pwd</span>              显示当前目录</span><br><span class="line"><span class="keyword">ln</span>                  创建链接文件</span><br><span class="line">more、less  分页显示文本文件内容</span><br><span class="line">head、tail    显示文件头、尾内容</span><br><span class="line">ctrl+alt+F1  命令行全屏模式</span><br></pre></td></tr></table></figure>
+<h2 id="打包压缩相关命令"><a href="#打包压缩相关命令" class="headerlink" title="打包压缩相关命令"></a>打包压缩相关命令</h2><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">gzip：</span><br><span class="line">bzip2：</span><br><span class="line"></span><br><span class="line">tar:                打包压缩</span><br><span class="line">     -<span class="ruby">c              归档文件</span></span><br><span class="line"><span class="ruby">     -x              压缩文件</span></span><br><span class="line"><span class="ruby">     -z              gzip压缩文件</span></span><br><span class="line"><span class="ruby">     -j              bzip2压缩文件</span></span><br><span class="line"><span class="ruby">     -v              显示压缩或解压缩过程 v(view)</span></span><br><span class="line"><span class="ruby">     -f              使用档名</span></span><br></pre></td></tr></table></figure>
+<p>例：<br>tar -cvf /home/abc.tar /home/abc              只打包，不压缩<br>tar -zcvf /home/abc.tar.gz /home/abc        打包，并用gzip压缩<br>tar -jcvf /home/abc.tar.bz2 /home/abc      打包，并用bzip2压缩</p>
+<p>当然，如果想解压缩，就直接替换上面的命令  tar -cvf  / tar -zcvf  / tar -jcvf 中的“c” 换成“x” 就可以了。</p>
+<h2 id="关机-重启机器"><a href="#关机-重启机器" class="headerlink" title="关机/重启机器"></a>关机/重启机器</h2><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">shutdown</span><br><span class="line">     -<span class="ruby">r             关机重启</span></span><br><span class="line"><span class="ruby">     -h             关机不重启</span></span><br><span class="line"><span class="ruby">     now            立刻关机</span></span><br><span class="line"><span class="ruby"></span></span><br><span class="line"><span class="ruby">halt                关机</span></span><br><span class="line"><span class="ruby"></span></span><br><span class="line"><span class="ruby">reboot              重启</span></span><br></pre></td></tr></table></figure>
+<h2 id="Linux管道"><a href="#Linux管道" class="headerlink" title="Linux管道"></a>Linux管道</h2><p>grep（global search regular expression(RE) and print out the line，全面搜索正则表达式并把行打印出来）是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹配的行打印出来。</p>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">grep [-acinv] [--color=auto] '搜寻字符串’ filename</span><br><span class="line"></span><br><span class="line">-<span class="ruby">a 不要忽略二进制数据。</span></span><br><span class="line"><span class="ruby">-A&lt;显示列数&gt; 除了显示符合范本样式的那一行之外，并显示该行之后的内容。</span></span><br><span class="line"><span class="ruby">-b 在显示符合范本样式的那一行之外，并显示该行之前的内容。 </span></span><br><span class="line"><span class="ruby">-c 计算符合范本样式的列数。 -C&lt;显示列数&gt;或-&lt;显示列数&gt; 除了显示符合范本样式的那一列之外，并显示该列之前后的内容。 </span></span><br><span class="line"><span class="ruby">-d&lt;进行动作&gt; 当指定要查找的是目录而非文件时，必须使用这项参数，否则grep命令将回报信息并停止动作。 </span></span><br><span class="line"><span class="ruby">-e&lt;范本样式&gt; 指定字符串作为查找文件内容的范本样式。 </span></span><br><span class="line"><span class="ruby">-E 将范本样式为延伸的普通表示法来使用，意味着使用能使用扩展正则表达式。 </span></span><br><span class="line"><span class="ruby">-f&lt;范本文件&gt; 指定范本文件，其内容有一个或多个范本样式，让grep查找符合范本条件的文件内容，格式为每一列的范本样式。 </span></span><br><span class="line"><span class="ruby">-F 将范本样式视为固定字符串的列表。 </span></span><br><span class="line"><span class="ruby">-G 将范本样式视为普通的表示法来使用。 </span></span><br><span class="line"><span class="ruby">-h 在显示符合范本样式的那一列之前，不标示该列所属的文件名称。 </span></span><br><span class="line"><span class="ruby">-H 在显示符合范本样式的那一列之前，标示该列的文件名称。 </span></span><br><span class="line"><span class="ruby">-i 胡列字符大小写的差别。 </span></span><br><span class="line"><span class="ruby">-l 列出文件内容符合指定的范本样式的文件名称。 </span></span><br><span class="line"><span class="ruby">-L 列出文件内容不符合指定的范本样式的文件名称。 </span></span><br><span class="line"><span class="ruby">-n 在显示符合范本样式的那一列之前，标示出该列的编号。 </span></span><br><span class="line"><span class="ruby">-q 不显示任何信息。</span></span><br><span class="line"><span class="ruby">-R/-r 此参数的效果和指定“-d recurse”参数相同。 </span></span><br><span class="line"><span class="ruby">-s 不显示错误信息。 </span></span><br><span class="line"><span class="ruby">-v 反转查找。 </span></span><br><span class="line"><span class="ruby">-w 只显示全字符合的列。 </span></span><br><span class="line"><span class="ruby">-x 只显示全列符合的列。 </span></span><br><span class="line"><span class="ruby">-y 此参数效果跟“-i”相同。 </span></span><br><span class="line"><span class="ruby">-o 只输出文件中匹配到的部分。</span></span><br></pre></td></tr></table></figure>
+<h2 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h2><p>文本编辑器<br>vim三种模式：命令模式、插入模式、编辑模式。使用ESC或i或：来切换模式。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">命令模式下：</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:q</span>                      退出</span><br><span class="line"><span class="selector-pseudo">:q</span>!                     强制退出</span><br><span class="line"><span class="selector-pseudo">:wq</span>                     保存并退出</span><br><span class="line"><span class="selector-pseudo">:set</span> <span class="selector-tag">number</span>             显示行号</span><br><span class="line"><span class="selector-pseudo">:set</span> <span class="selector-tag">nonumber</span>           隐藏行号</span><br><span class="line"><span class="selector-tag">dd</span>                      删除所在行</span><br><span class="line">/<span class="selector-tag">apache</span>                 在文档中查找<span class="selector-tag">apache</span> 按<span class="selector-tag">n</span>跳到下一个，<span class="selector-tag">shift</span>+<span class="selector-tag">n</span>上一个</span><br><span class="line"><span class="selector-tag">yyp</span>                     复制光标所在行，并粘贴</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h</span>(左移一个字符←)、<span class="selector-tag">j</span>(下一行↓)、<span class="selector-tag">k</span>(上一行↑)、<span class="selector-tag">l</span>(右移一个字符→)</span><br></pre></td></tr></table></figure>
+<h2 id="chmod（权限）-命令详解"><a href="#chmod（权限）-命令详解" class="headerlink" title="chmod（权限） 命令详解"></a>chmod（权限） 命令详解</h2><p><code>chmod [who] [+ | - | =] [mode] 文件名</code><br>u 表示“用户（user）”，即文件或目录的所有者。<br>g 表示“同组（group）用户”，即与文件属主有相同组ID的所有用户。<br>o 表示“其他（others）用户”。<br>a 表示“所有（all）用户”。它是系统默认值。</p>
+<p>操作符号可以是：</p>
+<ul>
+<li>添加某个权限。<ul>
+<li>取消某个权限。<br>= 赋予给定权限并取消其他所有权限（如果有的话）。</li>
+</ul>
+</li>
+</ul>
+<p>设置mode所表示的权限可用下述字母的任意组合：<br> r 可读。<br> W 可写<br> x 可执行。<br> r ————4<br> w ———–2<br> x ————1</p>
+<ul>
+<li>————0</li>
+</ul>
+<h3 id="linux下文件或目录的权限编码图"><a href="#linux下文件或目录的权限编码图" class="headerlink" title="linux下文件或目录的权限编码图"></a>linux下文件或目录的权限编码图</h3><p><img src="/2017/12/11/linuxCommand/D3D01EF7-46DC-4D6B-8959-0E30F2DAECC0.png" alt="D3D01EF7-46DC-4D6B-8959-0E30F2DAECC0"></p>
+
       
 
       
@@ -208,6 +241,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">linux命令</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -276,7 +320,7 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          bash-shell
+          Bash Shell 学习
         
       </div>
     </a>
@@ -310,7 +354,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用命令"><span class="toc-number">2.</span> <span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打包压缩相关命令"><span class="toc-number">3.</span> <span class="toc-text">打包压缩相关命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关机-重启机器"><span class="toc-number">4.</span> <span class="toc-text">关机/重启机器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux管道"><span class="toc-number">5.</span> <span class="toc-text">Linux管道</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vim"><span class="toc-number">6.</span> <span class="toc-text">vim</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chmod（权限）-命令详解"><span class="toc-number">7.</span> <span class="toc-text">chmod（权限） 命令详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#linux下文件或目录的权限编码图"><span class="toc-number">7.1.</span> <span class="toc-text">linux下文件或目录的权限编码图</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -324,7 +368,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="linuxCommand" data-title="linuxCommand" data-url="http://www.huangying47.top/2017/12/11/linuxCommand/"></div>
+	<div class="ds-thread" data-thread-key="linuxCommand" data-title="linux命令" data-url="http://www.huangying47.top/2017/12/11/linuxCommand/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -458,11 +502,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">默认</a>
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">linux命令</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">技术</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">默认</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -5,12 +5,33 @@
     
   <url>
     <loc>http://www.huangying47.top/2017/12/13/bash-shell/</loc>
-    <lastmod>2017-12-13T07:54:36.000Z</lastmod>
+    <lastmod>2017-12-13T08:08:39.000Z</lastmod>
     <data>
         <display>
-        <title>bash-shell</title>
+        <title>Bash Shell 学习</title>
         <pubTime>2017-12-13T07:54:36.000Z</pubTime>
         
+        <tag>学习</tag>
+         
+        <tag>linux命令</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.huangying47.top/2017/12/11/linuxCommand/</loc>
+    <lastmod>2017-12-13T08:08:28.000Z</lastmod>
+    <data>
+        <display>
+        <title>linux命令</title>
+        <pubTime>2017-12-11T08:27:33.000Z</pubTime>
+        
+        <tag>linux命令</tag>
+         
          
            
         </display>
@@ -28,21 +49,6 @@
         
         <tag>技术</tag>
          
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.huangying47.top/2017/12/11/linuxCommand/</loc>
-    <lastmod>2017-12-11T08:27:33.000Z</lastmod>
-    <data>
-        <display>
-        <title>linuxCommand</title>
-        <pubTime>2017-12-11T08:27:33.000Z</pubTime>
-        
          
            
         </display>
