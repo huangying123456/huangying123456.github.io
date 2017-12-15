@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="黄英的博客">
 <meta property="og:description" content="前言 记录学习shell脚本相关的知识。。。。 shell简介Shell本身是一个用C语言编写的程序，它是用户使用Unix/Linux的桥梁，用户的大部分工作都是通过Shell完成的。Shell既是一种命令语言，又是一种程序设计语言。作为命令语言，它交互式地解释和执行用户输入的命令；作为程序设计语言，它定义了各种变量和参数，并提供了许多在高级语言中才具有的控制结构，包括循环和分支。 它虽然不是Un">
 <meta property="og:image" content="http://www.huangying47.top/2017/12/13/bash-shell/WX20171213-161617@2x.png">
-<meta property="og:updated_time" content="2017-12-14T11:05:09.000Z">
+<meta property="og:updated_time" content="2017-12-15T04:04:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bash Shell 学习">
 <meta name="twitter:description" content="前言 记录学习shell脚本相关的知识。。。。 shell简介Shell本身是一个用C语言编写的程序，它是用户使用Unix/Linux的桥梁，用户的大部分工作都是通过Shell完成的。Shell既是一种命令语言，又是一种程序设计语言。作为命令语言，它交互式地解释和执行用户输入的命令；作为程序设计语言，它定义了各种变量和参数，并提供了许多在高级语言中才具有的控制结构，包括循环和分支。 它虽然不是Un">
@@ -472,12 +472,74 @@
 <h3 id="until"><a href="#until" class="headerlink" title="until"></a>until</h3><p>until 循环执行一系列命令直至条件为 true 时停止。until 循环与 while 循环在处理方式上刚好相反。一般while循环优于until循环，但在某些时候，也只是极少数情况下，until 循环更加有用。<br>　　until 循环格式为：<br>until command<br>do<br>   Statement(s) to be executed until command is true<br>done<br>　　command 一般为条件表达式，如果返回值为 false，则继续执行循环体内的语句，否则跳出循环。
 　　</p>
 <h3 id="case"><a href="#case" class="headerlink" title="case"></a>case</h3><p>case 语句匹配一个值或一个模式，如果匹配成功，执行相匹配的命令。case语句格式如下：<br>　　case 值 in<br>模式1)<br>    command1<br>    command2<br>    command3<br>    ;;<br>模式2）<br>    command1<br>    command2<br>    command3<br>    ;;<br><em>)<br>    command1<br>    command2<br>    command3<br>    ;;<br>esac<br>　　case工作方式如上所示。取值后面必须为关键字 in，每一模式必须以右括号结束。取值可以为变量或常数。匹配发现取值符合某一模式后，其间所有命令开始执行直至 ;;。;; 与其他语言中的 break 类似，意思是跳到整个 case 语句的最后。<br>　　取值将检测匹配的每一个模式。一旦模式匹配，则执行完匹配模式相应命令后不再继续其他模式。如果无一匹配模式，使用星号 </em> 捕获该值，再执行后面的命令。</p>
-<h2 id="函数使用"><a href="#函数使用" class="headerlink" title="函数使用"></a>函数使用</h2><p>函数可以让我们将一个复杂功能划分成若干模块，让程序结构更加清晰，代码重复利用率更高。像其他编程语言一样，Shell 也支持函数。Shell 函数必须先定义后使用。<br>　　Shell 函数的定义格式如下：<br>function_name () {<br>    list of commands<br>    [ return value ]<br>}<br>　　如果你愿意，也可以在函数名前加上关键字 function：<br>function function_name () {<br>    list of commands<br>    [ return value ]<br>}<br>　　函数返回值，可以显式增加return语句；如果不加，会将最后一条命令运行结果作为返回值。<br>　　Shell 函数返回值只能是整数，一般用来表示函数执行成功与否，0表示成功，其他值表示失败。如果 return 其他数据，比如一个字符串，往往会得到错误提示：“numeric argument required”。<br>　　如果一定要让函数返回字符串，那么可以先定义一个变量，用来接收函数的计算结果，脚本在需要的时候访问这个变量来获得函数返回值。<br>　　<br><strong>栗子</strong></p>
+<h2 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h2><p>一般情况下，每个 Unix/Linux 命令运行时都会打开三个文件：</p>
+<ul>
+<li>标准输入文件(stdin)：stdin的文件描述符为0，Unix程序默认从stdin读取数据。</li>
+<li>标准输出文件(stdout)：stdout 的文件描述符为1，Unix程序默认向stdout输出数据。</li>
+<li>标准错误文件(stderr)：stderr的文件描述符为2，Unix程序会向stderr流中写入错误信息。</li>
+</ul>
+<p>默认情况下，command &gt; file 将 stdout 重定向到 file，command &lt; file 将stdin 重定向到 file。</p>
+<p>如果希望 stderr 重定向到 file，可以这样写：<br><code>$command 2 &gt; file</code></p>
+<p>如果希望 stderr 追加到 file 文件末尾，可以这样写：<br><code>$command 2 &gt;&gt; file</code><br>2 表示标准错误文件(stderr)。</p>
+<p>如果希望将 stdout 和 stderr 合并后重定向到 file，可以这样写：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"><span class="built_in">command</span> &gt; file 2&gt;&amp;1</span></span><br><span class="line">　　或</span><br><span class="line"><span class="meta">$</span><span class="bash"><span class="built_in">command</span> &gt;&gt; file 2&gt;&amp;1</span></span><br></pre></td></tr></table></figure>
+<p>如果希望对 stdin 和 stdout 都重定向，可以这样写：<br><code>$command &lt; file1 &gt;file2</code><br>command 命令将 stdin 重定向到 file1，将 stdout 重定向到 file2。</p>
+<p>全部可用的重定向命令列表</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>command &gt; file</td>
+<td>将输出重定向到 file。</td>
+</tr>
+<tr>
+<td>command &lt; file</td>
+<td>将输入重定向到 file。</td>
+</tr>
+<tr>
+<td>command &gt;&gt; file</td>
+<td>将输出以追加的方式重定向到 file。</td>
+</tr>
+<tr>
+<td>n &gt; file</td>
+<td>将文件描述符为 n 的文件重定向到 file。</td>
+</tr>
+<tr>
+<td>n &gt;&gt; file</td>
+<td>将文件描述符为 n 的文件以追加的方式重定向到 file。</td>
+</tr>
+<tr>
+<td>n &gt;&amp; m</td>
+<td>将输出文件 m 和 n 合并。</td>
+</tr>
+<tr>
+<td>n &lt;&amp; m</td>
+<td>将输入文件 m 和 n 合并。</td>
+</tr>
+<tr>
+<td>&lt;&lt; tag</td>
+<td>将开始标记 tag 和结束标记 tag 之间的内容作为输入。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="函数使用"><a href="#函数使用" class="headerlink" title="函数使用"></a>函数使用</h2><p>函数可以让我们将一个复杂功能划分成若干模块，让程序结构更加清晰，代码重复利用率更高。像其他编程语言一样，Shell 也支持函数。Shell 函数必须先定义后使用。<br>　　Shell 函数的定义格式如下：<br>function_name () {<br>    list of commands<br>    [ return value ]<br>}<br>　　如果你愿意，也可以在函数名前加上关键字 function：<br>function function_name () {<br>    list of commands<br>    [ return value ]<br>}<br>　　函数返回值，可以显式增加return语句；如果不加，会将最后一条命令运行结果作为返回值。<br>　　Shell 函数返回值只能是整数，一般用来表示函数执行成功与否，0表示成功，其他值表示失败。如果 return 其他数据，比如一个字符串，往往会得到错误提示：“numeric argument required”。<br>　　如果一定要让函数返回字符串，那么可以先定义一个变量，用来接收函数的计算结果，脚本在需要的时候访问这个变量来获得函数返回值。
+　　</p>
+<h3 id="函数参数传递"><a href="#函数参数传递" class="headerlink" title="函数参数传递"></a>函数参数传递</h3><p>在Shell中，调用函数时可以向其传递参数。在函数体内部，通过 n的形式来获取参数的值，例如，1表示第一个参数，$2表示第二个参数…<br>带参数的函数示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="function"><span class="title">funWithParam</span></span>()&#123;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The value of the first parameter is <span class="variable">$1</span> !"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The value of the second parameter is <span class="variable">$2</span> !"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The value of the tenth parameter is <span class="variable">$10</span> !"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The value of the tenth parameter is <span class="variable">$&#123;10&#125;</span> !"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The value of the eleventh parameter is <span class="variable">$&#123;11&#125;</span> !"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The amount of the parameters is <span class="variable">$#</span> !"</span> <span class="comment"># 参数个数</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The string of the parameters is $* !"</span> <span class="comment"># 传递给函数的所有参数</span></span><br><span class="line">&#125;</span><br><span class="line">funWithParam 1 2 3 4 5 6 7 8 9 34 73</span><br></pre></td></tr></table></figure>
+<p>　　<br><strong>栗子</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="function"><span class="title">Hello</span></span> () &#123;</span><br><span class="line">value=111</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$value</span>"</span></span><br><span class="line"><span class="built_in">return</span> <span class="variable">$value</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># Invoke your function</span></span><br><span class="line">Hello</span><br><span class="line">ret=$?</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"value is <span class="variable">$ret</span>"</span></span><br></pre></td></tr></table></figure>
 <p>说明：<br><strong>返回值是字符串的话，貌似不行？ 待确认，或许有其他办法</strong><br>确认： BASH 要求返回值必须为一个整数，不能用 return 语句返回字符串变量</p>
 <h2 id="在-BASH-中读取用户输入"><a href="#在-BASH-中读取用户输入" class="headerlink" title="在 BASH 中读取用户输入"></a>在 BASH 中读取用户输入</h2><p>BASH 中通过 read 函数来实现读取用户输入的功能，如下面这段程序：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> Please enter your name</span><br><span class="line"><span class="built_in">read</span> NAME </span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Hi! <span class="variable">$NAME</span> !"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">exit</span> 0</span><br></pre></td></tr></table></figure>
 <h2 id="BASH-程序的调试"><a href="#BASH-程序的调试" class="headerlink" title="BASH 程序的调试"></a>BASH 程序的调试</h2><p>用 bash -x bash-script 命令，可以查看一个出错的 BASH 脚本到底错在什么地方，可以帮助程序员找出脚本中的错误。<br>另外用 trap 语句可以在 BASH 脚本出错退出时打印出一些变量的值，以供程序员检查。trap 语句必须作为继 “#!/bin/bash” 后的第一句非注释代码，一般 trap 命令被写作： trap ‘message $checkvar1 $checkvar2’ EXIT 。</p>
+<p><strong>相关链接：</strong></p>
+<p><a href="https://www.cnblogs.com/maybe2030/p/5022595.html#_label20" target="_blank" rel="noopener">基础-讲的比较详细</a></p>
+<p><a href="http://blog.chinaunix.net/uid-25932176-id-2973818.html" target="_blank" rel="noopener">基础入门-讲的比较粗</a></p>
 
       
 
@@ -633,7 +695,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shell简介"><span class="toc-number">2.</span> <span class="toc-text">shell简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第一个shell脚本"><span class="toc-number">3.</span> <span class="toc-text">第一个shell脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#如何执行shell脚本"><span class="toc-number">3.1.</span> <span class="toc-text">如何执行shell脚本</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变量"><span class="toc-number">4.</span> <span class="toc-text">变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-定义变量"><span class="toc-number">4.1.</span> <span class="toc-text">1 定义变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-使用变量"><span class="toc-number">4.2.</span> <span class="toc-text">2 使用变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-只读变量"><span class="toc-number">4.3.</span> <span class="toc-text">3 只读变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-删除变量"><span class="toc-number">4.4.</span> <span class="toc-text">4 删除变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-特殊变量"><span class="toc-number">4.5.</span> <span class="toc-text">5 特殊变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#替换"><span class="toc-number">5.</span> <span class="toc-text">替换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#变量替换"><span class="toc-number">5.1.</span> <span class="toc-text">变量替换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#运算符"><span class="toc-number">6.</span> <span class="toc-text">运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#算术运算符"><span class="toc-number">6.1.</span> <span class="toc-text">算术运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关系运算符"><span class="toc-number">6.2.</span> <span class="toc-text">关系运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件测试运算符"><span class="toc-number">6.3.</span> <span class="toc-text">文件测试运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#流程控制"><span class="toc-number">7.</span> <span class="toc-text">流程控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#if…then…else"><span class="toc-number">7.1.</span> <span class="toc-text">if…then…else</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for"><span class="toc-number">7.2.</span> <span class="toc-text">for</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#while"><span class="toc-number">7.3.</span> <span class="toc-text">while</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#until"><span class="toc-number">7.4.</span> <span class="toc-text">until</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#case"><span class="toc-number">7.5.</span> <span class="toc-text">case</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数使用"><span class="toc-number">8.</span> <span class="toc-text">函数使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在-BASH-中读取用户输入"><span class="toc-number">9.</span> <span class="toc-text">在 BASH 中读取用户输入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BASH-程序的调试"><span class="toc-number">10.</span> <span class="toc-text">BASH 程序的调试</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shell简介"><span class="toc-number">2.</span> <span class="toc-text">shell简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第一个shell脚本"><span class="toc-number">3.</span> <span class="toc-text">第一个shell脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#如何执行shell脚本"><span class="toc-number">3.1.</span> <span class="toc-text">如何执行shell脚本</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变量"><span class="toc-number">4.</span> <span class="toc-text">变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-定义变量"><span class="toc-number">4.1.</span> <span class="toc-text">1 定义变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-使用变量"><span class="toc-number">4.2.</span> <span class="toc-text">2 使用变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-只读变量"><span class="toc-number">4.3.</span> <span class="toc-text">3 只读变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-删除变量"><span class="toc-number">4.4.</span> <span class="toc-text">4 删除变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-特殊变量"><span class="toc-number">4.5.</span> <span class="toc-text">5 特殊变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#替换"><span class="toc-number">5.</span> <span class="toc-text">替换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#变量替换"><span class="toc-number">5.1.</span> <span class="toc-text">变量替换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#运算符"><span class="toc-number">6.</span> <span class="toc-text">运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#算术运算符"><span class="toc-number">6.1.</span> <span class="toc-text">算术运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关系运算符"><span class="toc-number">6.2.</span> <span class="toc-text">关系运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件测试运算符"><span class="toc-number">6.3.</span> <span class="toc-text">文件测试运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#流程控制"><span class="toc-number">7.</span> <span class="toc-text">流程控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#if…then…else"><span class="toc-number">7.1.</span> <span class="toc-text">if…then…else</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for"><span class="toc-number">7.2.</span> <span class="toc-text">for</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#while"><span class="toc-number">7.3.</span> <span class="toc-text">while</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#until"><span class="toc-number">7.4.</span> <span class="toc-text">until</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#case"><span class="toc-number">7.5.</span> <span class="toc-text">case</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重定向"><span class="toc-number">8.</span> <span class="toc-text">重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数使用"><span class="toc-number">9.</span> <span class="toc-text">函数使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#函数参数传递"><span class="toc-number">9.1.</span> <span class="toc-text">函数参数传递</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在-BASH-中读取用户输入"><span class="toc-number">10.</span> <span class="toc-text">在 BASH 中读取用户输入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BASH-程序的调试"><span class="toc-number">11.</span> <span class="toc-text">BASH 程序的调试</span></a></li></ol>
                     </div>
                 </span>
             </div>
