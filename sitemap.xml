@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.huangying47.top/2018/01/26/Django/</loc>
+    
+    <lastmod>2018-01-26T08:49:49.942Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.huangying47.top/2017/12/02/java8/</loc>
+    
+    <lastmod>2017-12-15T05:13:14.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.huangying47.top/2017/12/13/bash-shell/</loc>
     
     <lastmod>2017-12-15T04:04:21.000Z</lastmod>
@@ -26,13 +40,6 @@
     <loc>http://www.huangying47.top/2017/12/04/springCloud/</loc>
     
     <lastmod>2017-12-13T09:59:49.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.huangying47.top/2017/12/02/java8/</loc>
-    
-    <lastmod>2017-12-13T09:59:23.000Z</lastmod>
     
   </url>
   
