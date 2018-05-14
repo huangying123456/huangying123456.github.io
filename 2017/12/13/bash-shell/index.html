@@ -8,19 +8,17 @@
   <link rel="dns-prefetch" href="http://www.huangying47.top">
   <title>Bash Shell 学习 | hying&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言 记录学习shell脚本相关的知识。。。。 shell简介Shell本身是一个用C语言编写的程序，它是用户使用Unix/Linux的桥梁，用户的大部分工作都是通过Shell完成的。Shell既是一种命令语言，又是一种程序设计语言。作为命令语言，它交互式地解释和执行用户输入的命令；作为程序设计语言，它定义了各种变量和">
+  <meta name="description" content="前言记录学习shell脚本相关的知识。。。。 shell简介Shell本身是一个用C语言编写的程序，它是用户使用Unix/Linux的桥梁，用户的大部分工作都是通过Shell完成的。Shell既是一种命令语言，又是一种程序设计语言。作为命令语言，它交互式地解释和执行用户输入的命令；作为程序设计语言，它定义了各种变量和参">
 <meta name="keywords" content="学习,shell,linux命令">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Bash Shell 学习">
 <meta property="og:url" content="http://www.huangying47.top/2017/12/13/bash-shell/index.html">
 <meta property="og:site_name" content="hying&#39;s blog">
-<meta property="og:description" content="前言 记录学习shell脚本相关的知识。。。。 shell简介Shell本身是一个用C语言编写的程序，它是用户使用Unix/Linux的桥梁，用户的大部分工作都是通过Shell完成的。Shell既是一种命令语言，又是一种程序设计语言。作为命令语言，它交互式地解释和执行用户输入的命令；作为程序设计语言，它定义了各种变量和参数，并提供了许多在高级语言中才具有的控制结构，包括循环和分支。 它虽然不是Un">
-<meta property="og:image" content="http://www.huangying47.top/2017/12/13/bash-shell/WX20171213-161617@2x.png">
-<meta property="og:updated_time" content="2017-12-15T04:04:21.000Z">
+<meta property="og:description" content="前言记录学习shell脚本相关的知识。。。。 shell简介Shell本身是一个用C语言编写的程序，它是用户使用Unix/Linux的桥梁，用户的大部分工作都是通过Shell完成的。Shell既是一种命令语言，又是一种程序设计语言。作为命令语言，它交互式地解释和执行用户输入的命令；作为程序设计语言，它定义了各种变量和参数，并提供了许多在高级语言中才具有的控制结构，包括循环和分支。 它虽然不是Uni">
+<meta property="og:updated_time" content="2018-05-14T07:01:54.759Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bash Shell 学习">
-<meta name="twitter:description" content="前言 记录学习shell脚本相关的知识。。。。 shell简介Shell本身是一个用C语言编写的程序，它是用户使用Unix/Linux的桥梁，用户的大部分工作都是通过Shell完成的。Shell既是一种命令语言，又是一种程序设计语言。作为命令语言，它交互式地解释和执行用户输入的命令；作为程序设计语言，它定义了各种变量和参数，并提供了许多在高级语言中才具有的控制结构，包括循环和分支。 它虽然不是Un">
-<meta name="twitter:image" content="http://www.huangying47.top/2017/12/13/bash-shell/WX20171213-161617@2x.png">
+<meta name="twitter:description" content="前言记录学习shell脚本相关的知识。。。。 shell简介Shell本身是一个用C语言编写的程序，它是用户使用Unix/Linux的桥梁，用户的大部分工作都是通过Shell完成的。Shell既是一种命令语言，又是一种程序设计语言。作为命令语言，它交互式地解释和执行用户输入的命令；作为程序设计语言，它定义了各种变量和参数，并提供了许多在高级语言中才具有的控制结构，包括循环和分支。 它虽然不是Uni">
   
     <link rel="alternative" href="/atom.xml" title="hying&#39;s blog" type="application/atom+xml">
   
@@ -180,8 +178,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><img src="/2017/12/13/bash-shell/WX20171213-161617@2x.png" alt="WX20171213-161617@2x.png"></p>
-<p>记录学习shell脚本相关的知识。。。。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>记录学习shell脚本相关的知识。。。。</p>
 <h2 id="shell简介"><a href="#shell简介" class="headerlink" title="shell简介"></a>shell简介</h2><p>Shell本身是一个用C语言编写的程序，它是用户使用Unix/Linux的桥梁，用户的大部分工作都是通过Shell完成的。Shell既是一种命令语言，又是一种程序设计语言。作为命令语言，它交互式地解释和执行用户输入的命令；作为程序设计语言，它定义了各种变量和参数，并提供了许多在高级语言中才具有的控制结构，包括循环和分支。</p>
 <p>它虽然不是Unix/Linux系统内核的一部分，但它调用了系统核心的大部分功能来执行程序、建立文件并以并行的方式协调各个程序的运行。因此，对于用户来说，shell是最重要的实用程序，深入了解和熟练掌握shell的特性极其使用方法，是用好Unix/Linux系统的关键。</p>
 <a id="more"></a>
@@ -863,10 +860,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">默认</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">技术</a>
               </li>
              
@@ -875,11 +868,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">默认</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图片</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -892,10 +893,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">并发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
