@@ -15,10 +15,12 @@
 <meta property="og:url" content="http://www.huangying47.top/2018/05/31/ssh-key/index.html">
 <meta property="og:site_name" content="黄英的博客">
 <meta property="og:description" content="前言使用ssh key的目的是使得两台机器之间建立互信，从其中一台登陆到另一台时不需要密码。例如使用git时，配置好了ssh key 每次连接时就不需要密码了，非常的方便实用。">
-<meta property="og:updated_time" content="2018-05-31T07:39:44.798Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1727535-e14090ea44b0a9c6.jpg">
+<meta property="og:updated_time" content="2018-08-03T08:03:04.624Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ssh-key">
 <meta name="twitter:description" content="前言使用ssh key的目的是使得两台机器之间建立互信，从其中一台登陆到另一台时不需要密码。例如使用git时，配置好了ssh key 每次连接时就不需要密码了，非常的方便实用。">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/1727535-e14090ea44b0a9c6.jpg">
   
     <link rel="alternative" href="/atom.xml" title="黄英的博客" type="application/atom+xml">
   
@@ -183,6 +185,27 @@
 <h2 id="生成ssh-hey"><a href="#生成ssh-hey" class="headerlink" title="生成ssh hey"></a>生成ssh hey</h2><p><strong>1、 检查是否已经存在ssh key</strong></p>
 <p>通常sshkey会默认生成在用户家目录下，所以查看家目录下是否存在.ssh 文件夹，以及是否存在相关目录就行。（~/.ssh/id_rsa）</p>
 <p><strong>2、生成ssh key</strong></p>
+<p>输入命令：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ssh-keygen</span> <span class="selector-tag">-t</span> <span class="selector-tag">rsa</span> <span class="selector-tag">-C</span> "<span class="selector-tag">youremail</span>@<span class="keyword">example</span>.<span class="keyword">com</span>"</span><br></pre></td></tr></table></figure>
+<p>密钥类型可以用 -t 选项指定。如果没有指定则默认生成用于SSH-2的RSA密钥。这里使用的是rsa。</p>
+<p>同时在密钥中有一个注释字段，用-C来指定所指定的注释，可以方便用户标识这个密钥，指出密钥的用途或其他有用的信息。所以在这里输入自己的邮箱或者其他都行。</p>
+<p>输入完毕后程序同时要求输入一个密语字符串(passphrase)，一般默认直接enter 跳过，这样后面使用的时候也不用再输入密码。</p>
+<h2 id="ssh-key-使用"><a href="#ssh-key-使用" class="headerlink" title="ssh key 使用"></a>ssh key 使用</h2><p><strong>1、连接github</strong></p>
+<p>登录github。打开setting-&gt;SSH keys，点击右上角 New SSH key，把生成好的公钥id_rsa.pub放进 key输入框中，再为当前的key起一个title来区分每个key。</p>
+<p><strong>2、连接远程服务器</strong></p>
+<p>首先登陆到远程服务器，然后将公钥放入服务器的认证列表中，即 ~/.ssh/authorized_keys。<br>有可能该目录及文件不存在，则需要我们先新建</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir <span class="selector-class">.ssh</span>  <span class="comment">//创建文件夹</span></span><br><span class="line">cd <span class="selector-class">.ssh</span>  <span class="comment">//切换到该目录下</span></span><br><span class="line">vim authorized_keys  <span class="comment">// 创建文件</span></span><br></pre></td></tr></table></figure>
+<p>最后将公钥copy到 authorized_keys 文件中。</p>
+<p>配置文笔后，本地登陆远程服务器命令</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ssh</span> <span class="selector-tag">test</span>@<span class="keyword">127</span>.<span class="keyword">0</span>.<span class="keyword">0</span>.<span class="keyword">1</span> -p <span class="number">8080</span> -i ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/1727535-e14090ea44b0a9c6.jpg" alt="命令说明"></p>
+<p>但是这样看起来登陆命令也是蛮麻烦的，最后可以将一些配置加入到.ssh/config 中</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Host test</span><br><span class="line">    Hostname 47.94.162.200</span><br><span class="line">   <span class="built_in"> User </span>hy</span><br><span class="line">   <span class="built_in"> Port </span>8080</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
+<p>HostName： 是目标主机的主机名，也就是平时我们使用ssh后面跟的地址名称。</p>
+<p>Port：指定的端口号。</p>
+<p>User：指定的登陆用户名。</p>
+<p>IdentifyFile：指定的私钥地址。<br>最后登陆</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
 
       
 
@@ -330,7 +353,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#生成ssh-hey"><span class="toc-number">2.</span> <span class="toc-text">生成ssh hey</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#生成ssh-hey"><span class="toc-number">2.</span> <span class="toc-text">生成ssh hey</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ssh-key-使用"><span class="toc-number">3.</span> <span class="toc-text">ssh key 使用</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -486,18 +509,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">linux命令</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">默认</a>
               </li>
              
@@ -514,11 +525,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">图片</a>
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">linux命令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">图片</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,6 +554,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
