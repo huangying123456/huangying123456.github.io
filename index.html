@@ -232,6 +232,106 @@
 
 
   
+    <article id="post-java-htmltopdf" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/26/java-htmltopdf/">java-htmltopdf</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/26/java-htmltopdf/" class="archive-article-date">
+  	<time datetime="2018-10-26T04:01:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><h3 id="wkhtmltopdf"><a href="#wkhtmltopdf" class="headerlink" title="wkhtmltopdf"></a>wkhtmltopdf</h3><p>优点：<br>由于是基于 WebKit, 所以渲染结果和 Chrome( 包括其他基于 Chromium的浏览器几乎完全一致)<br>可以和前端公用一套 CSS 样式, 结果还是体验的一致性<br>支持大量的定制, 包括页头页脚, 页码, 目录等等<br>缺点：<br>一些框架网页支持不是很好，需要对页面样式进行调整，不然有可能会出现转出空白页面的情况。</p>
+<p>官网地址：<a href="https://wkhtmltopdf.org" target="_blank" rel="noopener">https://wkhtmltopdf.org</a><br>github地址：<a href="https://github.com/wkhtmltopdf/wkhtmltopdf" target="_blank" rel="noopener">https://github.com/wkhtmltopdf/wkhtmltopdf</a></p>
+<p>下载使用：官网有对应的windows、linux、macOs的安装包，下载安装后直接运行：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wkhtmltopdf <span class="string">http:</span><span class="comment">//google.com google.pdf</span></span><br></pre></td></tr></table></figure>
+<p>感觉使用这个需要对前端比较熟悉，不然感觉页面转不出来就会很着急，感觉是毫无办法。。</p>
+<h3 id="itext"><a href="#itext" class="headerlink" title="itext"></a>itext</h3><p>iText 是一个生成PDF文档的开源Java库，能够动态的从XML或者数据库生成PDF，同时还可以对文档进行加密，权限控制，并且还支持Java/C#等，但是iText本身提供的HTML解析器还是不够强大，许多HTML标签和属性无法识别，更悲催的是简单的CSS它不认识，排版调整样式让人头大。那么有没有什么方式能够支持css呢，又查阅到了 flying-saucer， flying-saucer也是导出PDF的一种解决方案，并且是基于iText的开源API，并且实现了CSS解析器，能够很好的支持CSS2.1，以及少量的CSS。</p>
+<p>具体示例：<br><a href="https://www.cnblogs.com/youzhibing/p/7692366.html" target="_blank" rel="noopener">flying-saucer + iText + Freemarker实现pdf的导出， 支持中文、css以及图片</a></p>
+<p><a href="https://www.jianshu.com/p/069fcec0c8dd" target="_blank" rel="noopener">Spring Boot集成Freemarker和iText生成PDF文档</a></p>
+<p>还有如果pdf中需要插入各种图表的话，可以考虑使用 ：<strong>JFreeChart</strong><br>然后再转成图片插入页面中但是感觉要对这个使用的比较好，不然画出来的图各种吃藕。</p>
+<p>这里有个老哥的具体demo示例项目：<br><a href="https://github.com/superad/pdf-kit" target="_blank" rel="noopener"> iText+FreeMarker+JFreeChart生成可动态配置的PDF文档</a></p>
+<p>可能会出现的问题<br>1、设置页面大小<br>2、中文汉字显示问题<br>推荐博文 <a href="http://www.cnblogs.com/reese-blogs/p/5546806.html" target="_blank" rel="noopener">http://www.cnblogs.com/reese-blogs/p/5546806.html</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/知识//" class="article-tag-list-link color3">知识</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/26/java-htmltopdf/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ssh-key" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -893,86 +993,6 @@
 
 
   
-    <article id="post-thread" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/02/thread/">java并发编程</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/02/thread/" class="archive-article-date">
-  	<time datetime="2017-12-02T07:33:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>编写优质的并发代码是一件难度极高的事情。Java语言从第一版本开始内置了对多线程的支持，这一点在当年是非常了不起的，但是当我们对并发编程有了更深刻的认识和更多的实践后，实现并发编程就有了更多的方案和更好的选择。</p>
-        
-          <a class="article-more-a" href="/2017/12/02/thread/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">并发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/02/thread/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1070,27 +1090,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Django</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">默认</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">技术</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">主页</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1106,11 +1106,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">默认</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">主页</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图片</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1126,11 +1142,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Django</a>
               </li>
             
             <div class="clearfix"></div>
