@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.huangying47.top">
-  <title>music | 黄英的博客</title>
+  <title>git使用命令 | 黄英的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="随便说说而已这是一篇用来测试插入播放器的，没有其他的什么意义不过好像有点小bug，慎入！">
+  <meta name="description" content="感觉平时虽然一直在使用git，但是自己使用的命令还是比较单一，有时候需要用到某个操作的时候，还是要去查找命令，所以这里做一个简单的记录。 先贴一个感觉比较全的链接：常用 Git 命令清单 下面是自己使用到的一一些">
+<meta name="keywords" content="git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="music">
-<meta property="og:url" content="http://www.huangying47.top/2017/12/01/music/index.html">
+<meta property="og:title" content="git使用命令">
+<meta property="og:url" content="http://www.huangying47.top/2018/10/30/git-command/index.html">
 <meta property="og:site_name" content="黄英的博客">
-<meta property="og:description" content="随便说说而已这是一篇用来测试插入播放器的，没有其他的什么意义不过好像有点小bug，慎入！">
-<meta property="og:updated_time" content="2017-12-02T06:09:29.000Z">
+<meta property="og:description" content="感觉平时虽然一直在使用git，但是自己使用的命令还是比较单一，有时候需要用到某个操作的时候，还是要去查找命令，所以这里做一个简单的记录。 先贴一个感觉比较全的链接：常用 Git 命令清单 下面是自己使用到的一一些">
+<meta property="og:updated_time" content="2018-10-30T10:08:21.822Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="music">
-<meta name="twitter:description" content="随便说说而已这是一篇用来测试插入播放器的，没有其他的什么意义不过好像有点小bug，慎入！">
+<meta name="twitter:title" content="git使用命令">
+<meta name="twitter:description" content="感觉平时虽然一直在使用git，但是自己使用的命令还是比较单一，有时候需要用到某个操作的时候，还是要去查找命令，所以这里做一个简单的记录。 先贴一个感觉比较全的链接：常用 Git 命令清单 下面是自己使用到的一一些">
   
     <link rel="alternative" href="/atom.xml" title="黄英的博客" type="application/atom+xml">
   
@@ -157,28 +158,42 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-music" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-git-command" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      music
+      git使用命令
     </h1>
   
 
         
-        <a href="/2017/12/01/music/" class="archive-article-date">
-  	<time datetime="2017-12-01T06:45:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-01</time>
+        <a href="/2018/10/30/git-command/" class="archive-article-date">
+  	<time datetime="2018-10-30T09:29:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="随便说说而已"><a href="#随便说说而已" class="headerlink" title="随便说说而已"></a>随便说说而已</h2><p>这是一篇用来测试插入播放器的，没有其他的什么意义<br>不过好像有点小bug，慎入！<br><a id="more"></a></p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="520" height="86" src="//music.163.com/outchain/player?type=2&id=446997775&auto=1&height=66"></iframe>
+        <p>感觉平时虽然一直在使用git，但是自己使用的命令还是比较单一，有时候需要用到某个操作的时候，还是要去查找命令，所以这里做一个简单的记录。</p>
+<p>先贴一个感觉比较全的链接：<a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html" target="_blank" rel="noopener">常用 Git 命令清单</a></p>
+<p>下面是自己使用到的一一些</p>
+<a id="more"></a>
+<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git branch      列出所有本地分支</span><br><span class="line">        -<span class="ruby">a      列出所有本地分支和远程分支</span></span><br><span class="line"><span class="ruby">        -r      列出所有远程分支     </span></span><br><span class="line"><span class="ruby">        -vv     列出本地分支并能有与远程分支的追踪关系</span></span><br></pre></td></tr></table></figure>
+<h4 id="新建分支"><a href="#新建分支" class="headerlink" title="新建分支"></a>新建分支</h4><p>新建一个分支，但依然停留在当前分支<br><code>git branch [branch]</code></p>
+<p>新建一个分支，并切换到该分支<br><code>git checkout -b [branch]</code></p>
+<p>从远程分支新建本地分支<br><code>git checkout -b [branch] [origin/branch]</code>    </p>
+<h4 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h4><p><code>git checkout [branch]</code></p>
+<h4 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h4><p>删除本地分支<br><code>git branch -d [branch-name]</code> </p>
+<p>删除远程分支</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">git</span> <span class="keyword">push </span>origin --delete [<span class="keyword">branch-name]</span></span><br><span class="line"><span class="keyword">git </span><span class="keyword">branch </span>-dr [remote/<span class="keyword">branch]</span></span><br></pre></td></tr></table></figure>
+<h4 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h4><p>合并指定分支到当前分支</p>
+<p><code>git merge [branch]</code> </p>
+<h4 id="关联本地分支和远程分支"><a href="#关联本地分支和远程分支" class="headerlink" title="关联本地分支和远程分支"></a>关联本地分支和远程分支</h4><p>无论之前本地分支是否和远程分支关联都可以使用该命令<br><code>git branch --set-upstream [branch] origin/[branch]</code></p>
+<p>…..未完待续</p>
 
       
 
@@ -213,6 +228,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -263,7 +289,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.huangying47.top/2017/12/01/music/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.huangying47.top/2018/10/30/git-command/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -277,18 +303,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/01/hexo-build-blog/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/3013/12/21/homePage/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          使用hexo、github搭建个人博客
+          个人主页
         
       </div>
     </a>
   
   
-    <a href="/2017/12/01/picture/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">picture</div>
+    <a href="/2018/10/26/java-htmltopdf/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java-htmltopdf</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -315,7 +341,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#随便说说而已"><span class="toc-number">1.</span> <span class="toc-text">随便说说而已</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#分支"><span class="toc-number">1.</span> <span class="toc-text">分支</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#新建分支"><span class="toc-number">1.0.1.</span> <span class="toc-text">新建分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#切换分支"><span class="toc-number">1.0.2.</span> <span class="toc-text">切换分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#删除分支"><span class="toc-number">1.0.3.</span> <span class="toc-text">删除分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#合并分支"><span class="toc-number">1.0.4.</span> <span class="toc-text">合并分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关联本地分支和远程分支"><span class="toc-number">1.0.5.</span> <span class="toc-text">关联本地分支和远程分支</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -329,7 +355,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="music" data-title="music" data-url="http://www.huangying47.top/2017/12/01/music/"></div>
+	<div class="ds-thread" data-thread-key="git-command" data-title="git使用命令" data-url="http://www.huangying47.top/2018/10/30/git-command/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -360,7 +386,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://www.huangying47.top/2017/12/01/music/",
+  id: "http://www.huangying47.top/2018/10/30/git-command/",
   owner: 'huangying123456',
   repo: 'huangying123456.github.io',
   oauth: {
