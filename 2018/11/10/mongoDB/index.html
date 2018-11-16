@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://www.huangying47.top/2018/11/10/mongoDB/index.html">
 <meta property="og:site_name" content="黄英的博客">
 <meta property="og:description" content="mongoDB 简介MongoDB 是由C++语言编写的，是一个基于分布式文件存储的开源数据库系统。在高负载的情况下，添加更多的节点，可以保证服务器性能。MongoDB 旨在为WEB应用提供可扩展的高性能数据存储解决方案。MongoDB 将数据存储为一个文档，数据结构由键值(key=&amp;gt;value)对组成。MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档，数组及文档数组。 适">
-<meta property="og:updated_time" content="2018-11-14T03:27:40.592Z">
+<meta property="og:updated_time" content="2018-11-16T03:36:32.740Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mongoDB 简单食用篇">
 <meta name="twitter:description" content="mongoDB 简介MongoDB 是由C++语言编写的，是一个基于分布式文件存储的开源数据库系统。在高负载的情况下，添加更多的节点，可以保证服务器性能。MongoDB 旨在为WEB应用提供可扩展的高性能数据存储解决方案。MongoDB 将数据存储为一个文档，数据结构由键值(key=&amp;gt;value)对组成。MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档，数组及文档数组。 适">
@@ -181,13 +181,13 @@
         <h2 id="mongoDB-简介"><a href="#mongoDB-简介" class="headerlink" title="mongoDB 简介"></a>mongoDB 简介</h2><p>MongoDB 是由C++语言编写的，是一个基于分布式文件存储的开源数据库系统。<br>在高负载的情况下，添加更多的节点，可以保证服务器性能。<br>MongoDB 旨在为WEB应用提供可扩展的高性能数据存储解决方案。<br>MongoDB 将数据存储为一个文档，数据结构由键值(key=&gt;value)对组成。MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档，数组及文档数组。</p>
 <p><strong>适合使用场景：</strong><br>应用不需要事务及复杂 join 支持，数据不是特别重要（例如通知，推送这些），数据表结构变化较为频繁，数据量特别大，数据的并发性特别高，数据结构比较特别（例如地图的位置坐标）。</p>
 <a id="more"></a>
-<h2 id="mongoDB安装使用"><a href="#mongoDB安装使用" class="headerlink" title="mongoDB安装使用"></a>mongoDB安装使用</h2><h3 id="一、Homebrew-安装（推荐）"><a href="#一、Homebrew-安装（推荐）" class="headerlink" title="一、Homebrew 安装（推荐）"></a>一、Homebrew 安装（推荐）</h3><p>直接使用命令：</p>
+<h2 id="mongoDB安装使用"><a href="#mongoDB安装使用" class="headerlink" title="mongoDB安装使用"></a>mongoDB安装使用</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h4 id="一、Homebrew-安装（推荐）"><a href="#一、Homebrew-安装（推荐）" class="headerlink" title="一、Homebrew 安装（推荐）"></a>一、Homebrew 安装（推荐）</h4><p>直接使用命令：</p>
 <figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>mongodb</span><br></pre></td></tr></table></figure>
 <p>如果要安装支持 TLS/SSL 命令如下：</p>
 <figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="keyword">brew </span><span class="keyword">install </span>mongodb --with-openssl</span><br></pre></td></tr></table></figure>
 <p>安装最新开发版本：</p>
 <figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="keyword">brew </span><span class="keyword">install </span>mongodb --devel</span><br></pre></td></tr></table></figure>
-<h3 id="二、安装包下载"><a href="#二、安装包下载" class="headerlink" title="二、安装包下载"></a>二、安装包下载</h3><p>下载链接：<a href="https://www.mongodb.com/download-center#community" target="_blank" rel="noopener">https://www.mongodb.com/download-center#community</a><br>具体步骤参考：<a href="https://www.cnblogs.com/quickcodes/p/5390482.html" target="_blank" rel="noopener">https://www.cnblogs.com/quickcodes/p/5390482.html</a></p>
+<h4 id="二、安装包下载"><a href="#二、安装包下载" class="headerlink" title="二、安装包下载"></a>二、安装包下载</h4><p>下载链接：<a href="https://www.mongodb.com/download-center#community" target="_blank" rel="noopener">https://www.mongodb.com/download-center#community</a><br>具体步骤参考：<a href="https://www.cnblogs.com/quickcodes/p/5390482.html" target="_blank" rel="noopener">https://www.cnblogs.com/quickcodes/p/5390482.html</a></p>
 <h3 id="运行mongoDB"><a href="#运行mongoDB" class="headerlink" title="运行mongoDB"></a>运行mongoDB</h3><p><strong><em>运行方式一：</em></strong></p>
 <p>启动服务：</p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">brew </span>services start mongodb</span><br></pre></td></tr></table></figure>
@@ -201,8 +201,8 @@
 <h3 id="连接manggoDB"><a href="#连接manggoDB" class="headerlink" title="连接manggoDB"></a>连接manggoDB</h3><p>采用MongoDB shell 来连接 MongoDB 服务器</p>
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">mongo</span></span><br></pre></td></tr></table></figure>
 <p>mongodb://admin:123456@localhost/</p>
-<h2 id="mongoDB-客户端工具"><a href="#mongoDB-客户端工具" class="headerlink" title="mongoDB 客户端工具"></a>mongoDB 客户端工具</h2><p><strong>Robo 3T</strong><br>下载地址：<a href="https://robomongo.org/download" target="_blank" rel="noopener">https://robomongo.org/download</a></p>
-<p><strong>studio3t</strong><br>下载地址：<a href="https://studio3t.com/download/" target="_blank" rel="noopener">https://studio3t.com/download/</a></p>
+<h2 id="mongoDB-客户端工具"><a href="#mongoDB-客户端工具" class="headerlink" title="mongoDB 客户端工具"></a>mongoDB 客户端工具</h2><p><strong>Robo 3T/studio3t</strong><br>下载地址：<a href="https://robomongo.org/download" target="_blank" rel="noopener">https://robomongo.org/download</a></p>
+<p>下载地址：<a href="https://studio3t.com/download/" target="_blank" rel="noopener">https://studio3t.com/download/</a></p>
 <p>两款比较，Robo 3T更轻便<strong>（免费）</strong>，studio3t功能更完善<strong>（收费）</strong>，例如能导入导出数据等。<br><em>Need a more powerful GUI? Meet Robo 3T’s sibling, Studio 3T</em></p>
 <h2 id="mongoDB-语法"><a href="#mongoDB-语法" class="headerlink" title="mongoDB 语法"></a>mongoDB 语法</h2><h3 id="库操作"><a href="#库操作" class="headerlink" title="库操作"></a>库操作</h3><h4 id="创建-切换-数据库："><a href="#创建-切换-数据库：" class="headerlink" title="创建(切换)数据库："></a>创建(切换)数据库：</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">use DATABASE_NAME</span></span><br></pre></td></tr></table></figure>
 <p>如果数据库不存在，则创建数据库，否则切换到指定数据库。</p>
@@ -357,7 +357,7 @@
 <p>查询 name 字段以”李”字开头的文档：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">db</span><span class="selector-class">.getCollection</span>(<span class="selector-tag">collectionName</span>)<span class="selector-class">.find</span>(&#123;<span class="attribute">name</span>:/^李/&#125;)</span><br></pre></td></tr></table></figure>
 <p>查询 name 字段以”李”字结尾的文档：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#### <span class="selector-tag">db</span><span class="selector-class">.getCollection</span>(<span class="selector-tag">collectionName</span>)<span class="selector-class">.find</span>(&#123;<span class="attribute">name</span>:/李$/&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">db</span><span class="selector-class">.getCollection</span>(<span class="selector-tag">collectionName</span>)<span class="selector-class">.find</span>(&#123;<span class="attribute">name</span>:/李$/&#125;)</span><br></pre></td></tr></table></figure>
 
       
 
@@ -505,7 +505,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#mongoDB-简介"><span class="toc-number">1.</span> <span class="toc-text">mongoDB 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mongoDB安装使用"><span class="toc-number">2.</span> <span class="toc-text">mongoDB安装使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、Homebrew-安装（推荐）"><span class="toc-number">2.1.</span> <span class="toc-text">一、Homebrew 安装（推荐）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、安装包下载"><span class="toc-number">2.2.</span> <span class="toc-text">二、安装包下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行mongoDB"><span class="toc-number">2.3.</span> <span class="toc-text">运行mongoDB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#连接manggoDB"><span class="toc-number">2.4.</span> <span class="toc-text">连接manggoDB</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mongoDB-客户端工具"><span class="toc-number">3.</span> <span class="toc-text">mongoDB 客户端工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mongoDB-语法"><span class="toc-number">4.</span> <span class="toc-text">mongoDB 语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#库操作"><span class="toc-number">4.1.</span> <span class="toc-text">库操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建-切换-数据库："><span class="toc-number">4.1.1.</span> <span class="toc-text">创建(切换)数据库：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查看所有数据库："><span class="toc-number">4.1.2.</span> <span class="toc-text">查看所有数据库：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#删除数据库："><span class="toc-number">4.1.3.</span> <span class="toc-text">删除数据库：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#集合（数据表）操作"><span class="toc-number">4.2.</span> <span class="toc-text">集合（数据表）操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建集合"><span class="toc-number">4.2.1.</span> <span class="toc-text">创建集合</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#删除集合："><span class="toc-number">4.2.2.</span> <span class="toc-text">删除集合：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查看当前数据库的所有集合："><span class="toc-number">4.2.3.</span> <span class="toc-text">查看当前数据库的所有集合：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文档操作"><span class="toc-number">4.3.</span> <span class="toc-text">文档操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#插入文档"><span class="toc-number">4.3.1.</span> <span class="toc-text">插入文档</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#更新文档"><span class="toc-number">4.3.2.</span> <span class="toc-text">更新文档</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#删除文档"><span class="toc-number">4.3.3.</span> <span class="toc-text">删除文档</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查询文档"><span class="toc-number">4.3.4.</span> <span class="toc-text">查询文档</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#mongoDB-简介"><span class="toc-number">1.</span> <span class="toc-text">mongoDB 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mongoDB安装使用"><span class="toc-number">2.</span> <span class="toc-text">mongoDB安装使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-number">2.1.</span> <span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、Homebrew-安装（推荐）"><span class="toc-number">2.1.1.</span> <span class="toc-text">一、Homebrew 安装（推荐）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、安装包下载"><span class="toc-number">2.1.2.</span> <span class="toc-text">二、安装包下载</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行mongoDB"><span class="toc-number">2.2.</span> <span class="toc-text">运行mongoDB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#连接manggoDB"><span class="toc-number">2.3.</span> <span class="toc-text">连接manggoDB</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mongoDB-客户端工具"><span class="toc-number">3.</span> <span class="toc-text">mongoDB 客户端工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mongoDB-语法"><span class="toc-number">4.</span> <span class="toc-text">mongoDB 语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#库操作"><span class="toc-number">4.1.</span> <span class="toc-text">库操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建-切换-数据库："><span class="toc-number">4.1.1.</span> <span class="toc-text">创建(切换)数据库：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查看所有数据库："><span class="toc-number">4.1.2.</span> <span class="toc-text">查看所有数据库：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#删除数据库："><span class="toc-number">4.1.3.</span> <span class="toc-text">删除数据库：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#集合（数据表）操作"><span class="toc-number">4.2.</span> <span class="toc-text">集合（数据表）操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建集合"><span class="toc-number">4.2.1.</span> <span class="toc-text">创建集合</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#删除集合："><span class="toc-number">4.2.2.</span> <span class="toc-text">删除集合：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查看当前数据库的所有集合："><span class="toc-number">4.2.3.</span> <span class="toc-text">查看当前数据库的所有集合：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文档操作"><span class="toc-number">4.3.</span> <span class="toc-text">文档操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#插入文档"><span class="toc-number">4.3.1.</span> <span class="toc-text">插入文档</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#更新文档"><span class="toc-number">4.3.2.</span> <span class="toc-text">更新文档</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#删除文档"><span class="toc-number">4.3.3.</span> <span class="toc-text">删除文档</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查询文档"><span class="toc-number">4.3.4.</span> <span class="toc-text">查询文档</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -673,15 +673,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">主页</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">技术</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -689,19 +681,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">技术</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">主页</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">图片</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -710,6 +698,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">图片</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
