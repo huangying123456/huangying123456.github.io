@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.huangying.fun/2017/12/11/linuxCommand/</loc>
+    
+    <lastmod>2019-02-19T03:35:54.814Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.huangying.fun/2019/01/09/vim-%E5%91%BD%E4%BB%A4%E7%AE%80%E8%AE%B0/</loc>
     
-    <lastmod>2019-01-09T04:02:58.108Z</lastmod>
+    <lastmod>2019-01-09T04:04:26.992Z</lastmod>
     
   </url>
   
@@ -54,13 +61,6 @@
     <loc>http://www.huangying.fun/2018/05/14/docker/</loc>
     
     <lastmod>2018-05-14T07:13:54.815Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.huangying.fun/2017/12/11/linuxCommand/</loc>
-    
-    <lastmod>2018-05-14T07:02:30.074Z</lastmod>
     
   </url>
   

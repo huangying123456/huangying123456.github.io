@@ -4,8 +4,25 @@
 
     
   <url>
+    <loc>http://www.huangying.fun/2017/12/11/linuxCommand/</loc>
+    <lastmod>2019-02-19T03:35:54.814Z</lastmod>
+    <data>
+        <display>
+        <title>linux命令</title>
+        <pubTime>2017-12-11T08:27:33.000Z</pubTime>
+        
+        <tag>linux命令</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.huangying.fun/2019/01/09/vim-%E5%91%BD%E4%BB%A4%E7%AE%80%E8%AE%B0/</loc>
-    <lastmod>2019-01-09T04:02:58.108Z</lastmod>
+    <lastmod>2019-01-09T04:04:26.992Z</lastmod>
     <data>
         <display>
         <title>vim-命令简记</title>
@@ -119,23 +136,6 @@
         <title>docker</title>
         <pubTime>2018-05-14T07:13:54.000Z</pubTime>
         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.huangying.fun/2017/12/11/linuxCommand/</loc>
-    <lastmod>2018-05-14T07:02:30.074Z</lastmod>
-    <data>
-        <display>
-        <title>linux命令</title>
-        <pubTime>2017-12-11T08:27:33.000Z</pubTime>
-        
-        <tag>linux命令</tag>
-         
          
            
         </display>

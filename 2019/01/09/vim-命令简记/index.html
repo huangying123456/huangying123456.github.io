@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="黄英的博客">
 <meta property="og:description" content="什么是 vim？Vim是从 vi 发展出来的一个文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。简单的来说， vi 是老式的字处理器，不过功能已经很齐全了，但是还是有可以进步的地方。 vim 则可以说是程序开发者的一项很好用的工具。 但是呢，vim要想玩得很溜，那难度还是有点大的，所以这里呢，就记录一些平时简单使用到的命令。 话不多说，直接上图。先来一个经典版的">
 <meta property="og:image" content="http://www.huangying.fun/2019/01/09/vim-命令简记/vi-vim-cheat-sheet-sch1.gif">
-<meta property="og:updated_time" content="2019-01-09T04:02:58.108Z">
+<meta property="og:updated_time" content="2019-01-09T04:04:26.992Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vim-命令简记">
 <meta name="twitter:description" content="什么是 vim？Vim是从 vi 发展出来的一个文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。简单的来说， vi 是老式的字处理器，不过功能已经很齐全了，但是还是有可以进步的地方。 vim 则可以说是程序开发者的一项很好用的工具。 但是呢，vim要想玩得很溜，那难度还是有点大的，所以这里呢，就记录一些平时简单使用到的命令。 话不多说，直接上图。先来一个经典版的">
@@ -186,11 +186,33 @@
 <p><img src="/2019/01/09/vim-命令简记/vi-vim-cheat-sheet-sch1.gif" alt="vim经典版键位图"></p>
 <h2 id="vi-vim-的使用"><a href="#vi-vim-的使用" class="headerlink" title="vi/vim 的使用"></a>vi/vim 的使用</h2><p>基本上 vi/vim 共分为三种模式，分别是命令模式（Command mode），输入模式（Insert mode）和底线命令模式（Last line mode）。 这三种模式的作用分别是：</p>
 <p><strong>命令模式：</strong></p>
-<p>用户刚刚启动 vi/vim，便进入了命令模式。<br>此状态下敲击键盘动作会被Vim识别为命令，而非输入字符。比如我们此时按下i，并不会输入一个字符，i被当作了一个命令。<br>以下是常用的几个命令：<br>i 切换到输入模式，以输入字符。<br>x 删除当前光标所在处的字符。<br>: 切换到底线命令模式，以在最底一行输入命令。<br>若想要编辑文本：启动Vim，进入了命令模式，按下i，切换到输入模式。<br>命令模式只有一些最基本的命令，因此仍要依靠底线命令模式输入更多命令。</p>
+<p>用户刚刚启动 vi/vim，便进入了命令模式。<br>此状态下敲击键盘动作会被Vim识别为命令，而非输入字符。比如我们此时按下i，并不会输入一个字符，i被当作了一个命令。<br>以下是常用的几个命令：</p>
+<ul>
+<li>i 切换到输入模式，以输入字符。</li>
+<li>x 删除当前光标所在处的字符。</li>
+<li>: 切换到底线命令模式，以在最底一行输入命令。</li>
+</ul>
+<p>若想要编辑文本：启动Vim，进入了命令模式，按下i，切换到输入模式。<br>命令模式只有一些最基本的命令，因此仍要依靠底线命令模式输入更多命令。</p>
 <p><strong>输入模式</strong></p>
-<p>在命令模式下按下i就进入了输入模式。<br>在输入模式中，可以使用以下按键：<br>字符按键以及Shift组合，输入字符<br>ENTER，回车键，换行<br>BACK SPACE，退格键，删除光标前一个字符<br>DEL，删除键，删除光标后一个字符<br>方向键，在文本中移动光标<br>HOME/END，移动光标到行首/行尾<br>Page Up/Page Down，上/下翻页<br>Insert，切换光标为输入/替换模式，光标将变成竖线/下划线<br>ESC，退出输入模式，切换到命令模式</p>
+<p>在命令模式下按下i就进入了输入模式。<br>在输入模式中，可以使用以下按键：</p>
+<ul>
+<li>字符按键以及Shift组合，输入字符</li>
+<li>ENTER，回车键，换行</li>
+<li>BACK SPACE，退格键，删除光标前一个字符</li>
+<li>DEL，删除键，删除光标后一个字符</li>
+<li>方向键，在文本中移动光标</li>
+<li>HOME/END，移动光标到行首/行尾</li>
+<li>Page Up/Page Down，上/下翻页</li>
+<li>Insert，切换光标为输入/替换模式，光标将变成竖线/下划线</li>
+<li>ESC，退出输入模式，切换到命令模式</li>
+</ul>
 <p><strong>底线命令模式</strong></p>
-<p>在命令模式下按下:（英文冒号）就进入了底线命令模式。<br>底线命令模式可以输入单个或多个字符的命令，可用的命令非常多。<br>在底线命令模式中，基本的命令有（已经省略了冒号）：<br>q 退出程序<br>w 保存文件<br>按ESC键可随时退出底线命令模式。</p>
+<p>在命令模式下按下:（英文冒号）就进入了底线命令模式。<br>底线命令模式可以输入单个或多个字符的命令，可用的命令非常多。<br>在底线命令模式中，基本的命令有（已经省略了冒号）：</p>
+<ul>
+<li>q 退出程序</li>
+<li>w 保存文件</li>
+</ul>
+<p>按ESC键可随时退出底线命令模式。</p>
 
       
 
@@ -460,6 +482,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Django</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
@@ -473,14 +503,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Django</a>
               </li>
              
               <li class="article-tag-list-item">
