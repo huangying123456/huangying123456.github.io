@@ -6,12 +6,12 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.huangying.fun">
-  <title>java 8大排序算法 | 黄英的博客</title>
+  <title>排序算法 - java版 | 黄英的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="排序这个问题一直都是面试的重点，工作中也有时候会用到吧，这里记录一下8中基本排序算法以及代码。  视觉感受各种算法的排序过程，感觉有点意思，可以戳一戳">
 <meta name="keywords" content="技术,java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java 8大排序算法">
+<meta property="og:title" content="排序算法 - java版">
 <meta property="og:url" content="http://www.huangying.fun/2018/03/02/java八大排序算法/index.html">
 <meta property="og:site_name" content="黄英的博客">
 <meta property="og:description" content="排序这个问题一直都是面试的重点，工作中也有时候会用到吧，这里记录一下8中基本排序算法以及代码。  视觉感受各种算法的排序过程，感觉有点意思，可以戳一戳">
@@ -23,9 +23,9 @@
 <meta property="og:image" content="http://www.huangying.fun/2018/03/02/java八大排序算法/冒泡.png">
 <meta property="og:image" content="http://www.huangying.fun/2018/03/02/java八大排序算法/快排.png">
 <meta property="og:image" content="http://www.huangying.fun/2018/03/02/java八大排序算法/归并.png">
-<meta property="og:updated_time" content="2018-03-02T09:13:09.359Z">
+<meta property="og:updated_time" content="2019-05-20T11:02:12.338Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java 8大排序算法">
+<meta name="twitter:title" content="排序算法 - java版">
 <meta name="twitter:description" content="排序这个问题一直都是面试的重点，工作中也有时候会用到吧，这里记录一下8中基本排序算法以及代码。  视觉感受各种算法的排序过程，感觉有点意思，可以戳一戳">
 <meta name="twitter:image" content="http://www.huangying.fun/2018/03/02/java八大排序算法/272007357503007.jpg">
   
@@ -174,7 +174,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      java 8大排序算法
+      排序算法 - java版
     </h1>
   
 
@@ -188,7 +188,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>排序这个问题一直都是面试的重点，工作中也有时候会用到吧，这里记录一下8中基本排序算法以及代码。</p>
-<p><img src="/2018/03/02/java八大排序算法/272007357503007.jpg" alt="java8种排序算法"></p>
+<p><img src="/2018/03/02/java八大排序算法/272007357503007.jpg" alt="8种排序算法"></p>
 <p><a href="http://blog.jobbole.com/11745/" target="_blank" rel="noopener">视觉感受各种算法的排序过程，感觉有点意思，可以戳一戳</a></p>
 <a id="more"></a>
 <h2 id="1-直接插入排序"><a href="#1-直接插入排序" class="headerlink" title="1.直接插入排序"></a>1.直接插入排序</h2><p> 把新的数据插入到已经排好的数据列中。将第一个数和第二个数排序，然后构成一个有序序列将第三个数插入进去，构成一个新的有序序列。对第四个数、第五个数……直到最后一个数，重复第二步。<br>如图所示：</p>
@@ -206,6 +206,7 @@
 <p><strong>代码：</strong></p>
 <figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">selectSort</span>(<span class="params"><span class="keyword">int</span>[]a</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len=a.length;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)&#123;<span class="comment">//循环次数</span></span><br><span class="line">            <span class="keyword">int</span> <span class="keyword">value</span>=a[i];</span><br><span class="line">            <span class="keyword">int</span> position=i;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;len;j++)&#123;<span class="comment">//找到最小的值和位置</span></span><br><span class="line">                <span class="keyword">if</span>(a[j]&lt;<span class="keyword">value</span>)&#123;</span><br><span class="line">                    <span class="keyword">value</span>=a[j];</span><br><span class="line">                    position=j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            a[position]=a[i];<span class="comment">//进行交换</span></span><br><span class="line">            a[i]=<span class="keyword">value</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <h2 id="4-堆排序"><a href="#4-堆排序" class="headerlink" title="4.堆排序"></a>4.堆排序</h2><p>对选择排序的优化。<br>将序列构建成大顶堆。<br>将根节点与最后一个节点交换，然后断开最后一个节点。<br>重复第一、二步，直到所有节点断开。</p>
+<p>这里有详细讲解堆排序这种算法：<a href="https://www.cnblogs.com/chengxiao/p/6129630.html" target="_blank" rel="noopener">堆排序</a></p>
 <p><img src="/2018/03/02/java八大排序算法/堆.png" alt="堆"></p>
 <p><strong>代码：</strong></p>
 <figure class="highlight stan"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">public  void heapSort(<span class="selector-tag">int</span>[] a)&#123;</span><br><span class="line">           <span class="selector-tag">int</span> len=a.length;</span><br><span class="line">           <span class="comment">//循环建堆  </span></span><br><span class="line">           <span class="name">for</span>(<span class="selector-tag">int</span> i=<span class="number">0</span>;i&lt;len-<span class="number">1</span>;i++)&#123;</span><br><span class="line">               <span class="comment">//建堆  </span></span><br><span class="line">               buildMaxHeap(a,len-<span class="number">1</span>-i);</span><br><span class="line">               <span class="comment">//交换堆顶和最后一个元素  </span></span><br><span class="line">               swap(a,<span class="number">0</span>,len-<span class="number">1</span>-i);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">        <span class="comment">//交换方法</span></span><br><span class="line">       private  void swap(<span class="selector-tag">int</span>[] <span class="title">data</span>, <span class="selector-tag">int</span> i, <span class="selector-tag">int</span> j) &#123;</span><br><span class="line">           <span class="selector-tag">int</span> tmp=<span class="title">data</span>[i];</span><br><span class="line">           <span class="title">data</span>[i]=<span class="title">data</span>[j];</span><br><span class="line">           <span class="title">data</span>[j]=tmp;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//对data数组从0到lastIndex建大顶堆  </span></span><br><span class="line">       private void buildMaxHeap(<span class="selector-tag">int</span>[] <span class="title">data</span>, <span class="selector-tag">int</span> lastIndex) &#123;</span><br><span class="line">           <span class="comment">//从lastIndex处节点（最后一个节点）的父节点开始  </span></span><br><span class="line">           <span class="name">for</span>(<span class="selector-tag">int</span> i=(lastIndex-<span class="number">1</span>)/<span class="number">2</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">               <span class="comment">//k保存正在判断的节点  </span></span><br><span class="line">               <span class="selector-tag">int</span> k=i;</span><br><span class="line">               <span class="comment">//如果当前k节点的子节点存在  </span></span><br><span class="line">               <span class="name">while</span>(k*<span class="number">2</span>+<span class="number">1</span>&lt;=lastIndex)&#123;</span><br><span class="line">                   <span class="comment">//k节点的左子节点的索引  </span></span><br><span class="line">                   <span class="selector-tag">int</span> biggerIndex=<span class="number">2</span>*k+<span class="number">1</span>;</span><br><span class="line">                   <span class="comment">//如果biggerIndex小于lastIndex，即biggerIndex+1代表的k节点的右子节点存在  </span></span><br><span class="line">                   <span class="name">if</span>(biggerIndex&lt;lastIndex)&#123;</span><br><span class="line">                       <span class="comment">//若果右子节点的值较大  </span></span><br><span class="line">                       <span class="name">if</span>(<span class="title">data</span>[biggerIndex]&lt;<span class="title">data</span>[biggerIndex+<span class="number">1</span>])&#123;</span><br><span class="line">                           <span class="comment">//biggerIndex总是记录较大子节点的索引  </span></span><br><span class="line">                           biggerIndex++;</span><br><span class="line">                       &#125;</span><br><span class="line">                   &#125;</span><br><span class="line">                   <span class="comment">//如果k节点的值小于其较大的子节点的值  </span></span><br><span class="line">                   <span class="name">if</span>(<span class="title">data</span>[k]&lt;<span class="title">data</span>[biggerIndex])&#123;</span><br><span class="line">                       <span class="comment">//交换他们  </span></span><br><span class="line">                       swap(<span class="title">data</span>,k,biggerIndex);</span><br><span class="line">                       <span class="comment">//将biggerIndex赋予k，开始while循环的下一次循环，重新保证k节点的值大于其左右子节点的值  </span></span><br><span class="line">                       k=biggerIndex;</span><br><span class="line">                   &#125;<span class="name">else</span>&#123;</span><br><span class="line">                       break;</span><br><span class="line">                   &#125;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
@@ -526,14 +527,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Django</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
@@ -543,6 +536,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">linux命令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Django</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -570,6 +571,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
@@ -579,10 +584,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
